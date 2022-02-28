@@ -1,0 +1,25 @@
+---
+layout: page
+title: Showcase
+permalink: /showcase/
+weight: 2
+---
+<p>In addition to the homebrews listed below, you can also find packages in these sites where developers and community members post to. We do not control or endorse the contents of these sites.</p>
+<ul>
+  <li><a href="http://gbatemp.net/forums/ps-vita-hacking-homebrew.217/">GBAtemp Forums</a></li>
+  <li><a href="http://wololo.net/talk/viewforum.php?f=116">wololo.net/talk</a></li>
+  <li><a href="https://vitadb.rinnegatamante.it/#/">VitaDB</a></li>
+  <li><a href="http://gekihen.customprotocol.com/en/">GekiHEN</a></li>
+</ul>
+<div id="homebrew-container">
+{% for homebrew in site.homebrew %}
+  <div class="well" id="{{ homebrew.id }}">
+    <img class="pull-right" alt="" src="/assets/{{ homebrew.id }}.png" width="240" height="136"></img>
+    <h3>{{ homebrew.title }}</h3>
+    {% if homebrew.author %}<h4>By {{ homebrew.author }}</h4>{% endif %}
+    <p>{{ homebrew.content }}</p>
+    <a href="{{ homebrew.site }}" class="btn btn-success">Download</a>
+    <div class="clearfix"></div>
+  </div>
+{% endfor %}
+</div>
